@@ -1,0 +1,14 @@
+category_id,category_code,category_name,description
+1,TECH,Technology,"Technical articles on software, hardware, and emerging technologies."
+2,MOT,Motivation,Motivational and self-improvement content.
+3,SEC,Cybersecurity,"Cybersecurity best practices, trends, and risk management."
+4,JOB,Career & Job Hunting,"Career development, job hunting, and workplace strategies."
+5,CS,Computer Science,"Computer Science concepts, algorithms, and theoretical foundations."
+6,WD,Web Development,"Web development, frontend/backend technologies, and UI frameworks."
+7,DES,Design & UI/UX,"Graphic design, UI/UX, and digital product design principles."
+8,PM,Product Management,"Product Management, agile development, and project planning."
+9,DS,Data Science & AI,"Data Science, machine learning, and AI-related topics."
+10,FCC,freeCodeCamp Education,Educational content related to freeCodeCamp courses and projects.
+11,AD,Advertising & Marketing,"Digital marketing, advertising trends, and audience targeting."
+12,CB,Coding Best Practices,"Code snippets, best practices, and programming techniques."
+13,OTHER,Miscellaneous Topics,"Miscellaneous topics including technology, society, and trends."
