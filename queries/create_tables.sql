@@ -4,7 +4,6 @@ USE ROLE accountadmin;
 ---> set the Warehouse
 USE WAREHOUSE compute_wh;
 
-
 -------------------------------------------------------------------------------------------
     -- Step 2: With context in place, let's now create a Database, Schema, and Table
         -- CREATE DATABASE: https://docs.snowflake.com/en/sql-reference/sql/create-database
@@ -25,7 +24,8 @@ CREATE OR REPLACE SCHEMA medium_articles_authors.gold;
 --CREATES stage
 
 CREATE OR REPLACE STAGE medium_articles_authors.bronze.medium_stage
-FILE_FORMAT = (TYPE = CSV, FIELD_OPTIONALLY_ENCLOSED_BY='"', SKIP_HEADER=1);
+FILE_FORMAT = (TYPE = CSV, FIELD_OPTIONALLY_ENCLOSED_BY='"', SKIP_HEADER=1)
+DIRECTORY = (ENABLE = TRUE);
 
 CREATE OR REPLACE TABLE medium_articles_authors.bronze.medium_articles_bronze (
     article_id INT PRIMARY KEY,
@@ -42,8 +42,8 @@ CREATE OR REPLACE TABLE medium_articles_authors.bronze.medium_articles_bronze (
 CREATE OR REPLACE TABLE medium_articles_authors.bronze.medium_authors_bronze (
     author_id INT PRIMARY KEY,
     author_name STRING,
-    email STRING,
-    address STRING,
+    email STRING, -- PII
+    address STRING, -- PII
     bio STRING,
     join_date STRING, -- Will convert to DATE in Silver layer
     total_followers INT
@@ -57,7 +57,7 @@ CREATE OR REPLACE TABLE medium_articles_authors.bronze.medium_engagement_bronze 
     timestamp STRING -- Will convert to TIMESTAMP in Silver layer
 );
 
-CREATE OR REPLACE TABLE medium_categories_bronze (
+CREATE OR REPLACE TABLE medium_articles_authors.bronze.medium_categories_bronze (
     category_id INT PRIMARY KEY,
     category_code STRING UNIQUE,
     category_name STRING UNIQUE,

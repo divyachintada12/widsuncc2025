@@ -1,4 +1,7 @@
 --after loading into bronze, inspect the tables
+USE medium_articles_authors.bronze;
+
+
 
 COPY INTO medium_articles_authors.bronze.medium_articles_bronze
 FROM @medium_stage/medium/medium_articles_bronze.csv
